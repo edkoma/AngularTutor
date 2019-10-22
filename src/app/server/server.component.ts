@@ -9,7 +9,7 @@ import { Student } from '../../shared/student.model';
 })
 export class ServerComponent {
     serverId = 10;
-    serverStatus = 'offLine';
+    serverStatus = 'onLine';
     counter = 0;
     isLogin = false;
     userName: string;
