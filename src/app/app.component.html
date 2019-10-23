@@ -1,19 +1,45 @@
 <!--The content below is only a placeholder and can be replaced.-->
-  <div class="outer-container">
-    <div class="container-1">
-      <div class="line-1">
-        北美硅谷一线工程师在线直播授课，为你打开IT名企的大门
-      </div>
-      <div class="line-2">
-        九章算法已经帮助 30000 + 人成功拿到心仪的Offer
-      </div>
-      <div class="buttons">
-        <div class="btn">VIP集训营</div>
-        <div class="btn">课程</div>
-        <div class="btn">微课堂</div>
-      </div>
+
+<div class="desktop">
+  <div class="status">
+    <div *ngIf="isStart" class="title">
+      开始你的表演吧！
+    </div>
+    <div *ngIf="foundDish" class="title">
+      你做好了{{dishName}}
+    </div>
+    <div *ngIf="notFoundDish" class="title">
+      材料不对
     </div>
   </div>
 
+  <div class="pan">
+    <div class="ingredients-container-1">
+      <div *ngIf="ingredients[0]" class="icon" id="pork"></div>
+      <div *ngIf="ingredients[1]" class="icon" id="fish"></div>
+      <div *ngIf="ingredients[2]" class="icon" id="chicken"></div>
+      <div *ngIf="ingredients[3]" class="icon" id="tofu"></div>
+      <div *ngIf="ingredients[4]" class="icon" id="pepper"></div>
+    </div>
+  </div>
+
+  <div class="cook">
+    <button (click)="cook()">走你!</button>
+  </div>
+
+  <div class="ingredient-section">
+    <div class="ingredient-title">
+      这些是你的食材：
+    </div>
+    <div class="ingredients-container-2">
+      <button class="ingredient" (click)="selectPork()" >猪肉</button>
+      <button class="ingredient" (click)="selectFish()">鱼肉</button>
+      <button class="ingredient" (click)="selectChicken()">鸡肉</button>
+      <button class="ingredient" (click)="selectTofu()">豆腐</button>
+      <button class="ingredient" (click)="selectPepper()">辣椒</button>
+    </div>
+  </div>
+
+</div>
 <!--<app-server></app-server>-->
 <!--<div app-server> </div>-->
